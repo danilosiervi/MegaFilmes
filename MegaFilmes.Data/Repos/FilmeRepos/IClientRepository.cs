@@ -12,7 +12,7 @@ public interface IClientRepository
 
     void AvaliarFilme(Avaliacao avaliacao);
 
-    public IEnumerable<Avaliacao> BuscarAvaliacoesDoFilme(Filme filme);
+    IEnumerable<Avaliacao> BuscarAvaliacoesDoFilme(Filme filme);
 
     void EditarAvaliacao(Avaliacao avaliacao);
 
