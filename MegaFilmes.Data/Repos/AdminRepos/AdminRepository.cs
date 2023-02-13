@@ -27,25 +27,10 @@ public class AdminRepository
     public void DeletarDiretor(Diretor diretor) => _diretorDao.Delete(diretor);
 
     public void AdicionarGenero(Genero genero) => _generoDao.Add(genero);
-    public void EditarGenero(Genero genero)
-    {
+    public void EditarGenero(Genero genero) => _generoDao.Update(genero);
+    public void DeletarGenero(Genero genero) => _generoDao.Delete(genero);
 
-    }
-    public void DeletarGenero(Genero genero)
-    {
-
-    }
-
-    public void AdicionarAtor(Ator ator)
-    {
-
-    }
-    public void EditarAtor(Ator ator)
-    {
-
-    }
-    public void DeletarAtor(Ator ator)
-    {
-
-    }
+    public void AdicionarAtor(Ator ator) => _atorDao.Add(ator);
+    public void EditarAtor(Ator ator) => _atorDao.Update(ator);
+    public void DeletarAtor(Ator ator) => _atorDao.Delete(ator);
 }
