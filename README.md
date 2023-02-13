@@ -1,9 +1,9 @@
-<h1 align="center"> MegaFilmesAPI</h1>
+<h1 align="center"> MegaFilmes</h1>
 
 
-<h4 align="center"> 
+<h2 align="center"> 
     :construction:  Projeto em construção  :construction:
-</h4>
+</h2>
 
 ## Resumo do projeto
 
@@ -15,7 +15,8 @@
 ### ✔️ Técnicas e tecnologias utilizadas
 
 - ``C#``
-- ``.NET``
+- ``Entity Framework Core``
+- ``ASP.NET``
 - ``Postman``
 - ``Visual Studio``
 - ``Paradigma de orientação a objetos``
