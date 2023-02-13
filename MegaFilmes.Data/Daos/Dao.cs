@@ -20,10 +20,7 @@ public class Dao<TEntity> : IDao<TEntity> where TEntity : Entity
         _context.SaveChanges();
     }
 
-    public IEnumerable<TEntity> GetAll()
-    {
-        return _entities.ToList();
-    }
+    public IEnumerable<TEntity> GetAll() => _entities.ToList();
 
     public TEntity? GetById(int id)
     {

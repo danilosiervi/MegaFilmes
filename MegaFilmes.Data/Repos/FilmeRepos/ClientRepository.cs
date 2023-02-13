@@ -14,15 +14,9 @@ public class ClientRepository : IClientRepository
         _avaliacaoDao = avaliacaoDao;
     }
 
-    public IEnumerable<Filme> BuscarTodosFilmes()
-    {
-        return _filmeDao.GetAll();
-    }
+    public IEnumerable<Filme> BuscarTodosFilmes() => _filmeDao.GetAll();
 
-    public Filme? BuscarFilmePorId(int id)
-    {
-        return _filmeDao.GetById(id);
-    }
+    public Filme? BuscarFilmePorId(int id) => _filmeDao.GetById(id);
 
     public IEnumerable<Filme> BuscarFilmesPorParametro(string param)
     {
@@ -34,23 +28,15 @@ public class ClientRepository : IClientRepository
                 f.Diretor.Nome.ToLower().Contains(lower));
     }
 
-    public void AvaliarFilme(Avaliacao avaliacao)
-    {
-        _avaliacaoDao.Add(avaliacao);
-    }
+    public void AvaliarFilme(Avaliacao avaliacao) => _avaliacaoDao.Add(avaliacao);
 
     public IEnumerable<Avaliacao> BuscarAvaliacoesDoFilme(Filme filme)
     {
-        return _avaliacaoDao.GetAll().Where(a => a.FilmeId == filme.Id);
+        return _avaliacaoDao.GetAll()
+            .Where(a => a.FilmeId == filme.Id);
     }
 
-    public void EditarAvaliacao(Avaliacao avaliacao)
-    {
-        _avaliacaoDao.Update(avaliacao);
-    }
+    public void EditarAvaliacao(Avaliacao avaliacao) => _avaliacaoDao.Update(avaliacao);
 
-    public void DeletarAvaliacao(Avaliacao avaliacao)
-    {
-        _avaliacaoDao.Delete(avaliacao);
-    }
+    public void DeletarAvaliacao(Avaliacao avaliacao) => _avaliacaoDao.Delete(avaliacao);
 }
