@@ -1,14 +1,13 @@
 ﻿namespace MegaFilmes.Models;
 
-public class Ator
+public class Ator : Entity
 {
     public Ator()
     {
-        Filmes = new HashSet<Filme>();
+        Filmes = new Dictionary<FilmeAtor, string>();
     }
 
-    public int AtorId { get; set; }
     public string Nome { get; set; }
 
-    public virtual ICollection<Filme> Filmes { get; set; }
+    public virtual IDictionary<FilmeAtor, string> Filmes { get; set; }
 }

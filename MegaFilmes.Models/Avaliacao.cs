@@ -1,8 +1,7 @@
 ﻿namespace MegaFilmes.Models;
 
-public class Avaliacao
+public class Avaliacao : Entity
 {
-    public int AvaliacaoId { get; set; }
     public int Nota { get; set; }
     public string? Comentario { get; set; }
 

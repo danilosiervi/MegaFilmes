@@ -1,13 +1,12 @@
 ﻿namespace MegaFilmes.Models;
 
-public class Diretor
+public class Diretor : Entity
 {
     public Diretor()
     {
         Filmes = new HashSet<Filme>();
     }
 
-    public int DiretorId { get; set; }
     public string Nome { get; set; }
 
     public virtual ICollection<Filme> Filmes { get; set; }
