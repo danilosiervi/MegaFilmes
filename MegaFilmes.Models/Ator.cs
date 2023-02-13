@@ -4,10 +4,10 @@ public class Ator : Entity
 {
     public Ator()
     {
-        Filmes = new Dictionary<FilmeAtor, string>();
+        Filmes = new HashSet<FilmeAtor>();
     }
 
     public string Nome { get; set; }
 
-    public virtual IDictionary<FilmeAtor, string> Filmes { get; set; }
+    public virtual ICollection<FilmeAtor> Filmes { get; set; }
 }

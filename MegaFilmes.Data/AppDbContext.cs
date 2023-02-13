@@ -24,7 +24,7 @@ public class AppDbContext : DbContext
 
 		modelBuilder.Entity<FilmeAtor>()
 			.HasOne(fa => fa.Ator)
-			.WithMany(a => a.Filmes.Keys)
+			.WithMany(a => a.Filmes)
 			.HasForeignKey(fa => fa.AtorId);
 
 		modelBuilder.Entity<FilmeAtor>()
