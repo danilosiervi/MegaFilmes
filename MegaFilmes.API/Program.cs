@@ -7,7 +7,7 @@ var connectionString = builder.Configuration.GetConnectionString("MyConnection")
 
 builder.Services.AddDbContext<AppDbContext>(opts =>
 {
-    opts.UseLazyLoadingProxies().UseSqlServer(connectionString);
+    opts.UseLazyLoadingProxies().UseSqlServer(connectionString, m => m.MigrationsAssembly("MegaFilmes.API"));
 });
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());

@@ -31,5 +31,20 @@ public class AppDbContext : DbContext
 			.HasOne(fa => fa.Filme)
 			.WithMany(f => f.Elenco)
 			.HasForeignKey(fa => fa.FilmeId);
+
+        modelBuilder.Entity<Filme>()
+			.HasOne(f => f.Diretor)
+			.WithMany(d => d.Filmes)
+			.HasForeignKey(f => f.DiretorId);
+
+		modelBuilder.Entity<Filme>()
+			.HasOne(f => f.Genero)
+			.WithMany(g => g.Filmes)
+			.HasForeignKey(f => f.Genero);
+
+		modelBuilder.Entity<Avaliacao>()
+			.HasOne(a => a.Filme)
+			.WithMany(f => f.Avaliacoes)
+			.HasForeignKey(a => a.FilmeId);
 	}
 }
