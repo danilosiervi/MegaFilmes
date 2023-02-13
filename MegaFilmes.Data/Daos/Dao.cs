@@ -35,7 +35,8 @@ public class Dao<TEntity> : IDao<TEntity> where TEntity : Entity
 
     public void Update(TEntity entity)
     {
-
+        _entities.Update(entity);
+        _context.SaveChanges();
     }
 
     public void Delete(TEntity entity)

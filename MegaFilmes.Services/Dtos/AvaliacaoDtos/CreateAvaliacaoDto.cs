@@ -13,5 +13,4 @@ public class CreateAvaliacaoDto
 
     [Required]
     public int FilmeId { get; set; }
-
 }

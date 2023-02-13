@@ -19,6 +19,11 @@ public class ClientRepository : IClientRepository
         return _filmeDao.GetAll();
     }
 
+    public Filme? BuscarFilmePorId(int id)
+    {
+        return _filmeDao.GetById(id);
+    }
+
     public IEnumerable<Filme> BuscarFilmesPorParametro(string param)
     {
         var lower = param.ToLower();
@@ -29,14 +34,14 @@ public class ClientRepository : IClientRepository
                 f.Diretor.Nome.ToLower().Contains(lower));
     }
 
-    public Filme? BuscarFilmePorId(int id)
-    {
-        return _filmeDao.GetById(id);
-    }
-
     public void AvaliarFilme(Avaliacao avaliacao)
     {
         _avaliacaoDao.Add(avaliacao);
+    }
+
+    public IEnumerable<Avaliacao> BuscarAvaliacoesDoFilme(Filme filme)
+    {
+        return _avaliacaoDao.GetAll().Where(a => a.FilmeId == filme.Id);
     }
 
     public void EditarAvaliacao(Avaliacao avaliacao)
