@@ -9,6 +9,7 @@ public class AvaliacaoProfile : Profile
 	public AvaliacaoProfile()
 	{
 		CreateMap<Avaliacao, ReadAvaliacaoDto>();
-		CreateMap<CreateAvaliacaoDto, Avaliacao>();
+        CreateMap<ReadAvaliacaoDto, Avaliacao>();
+        CreateMap<CreateAvaliacaoDto, Avaliacao>();
 	}
 }

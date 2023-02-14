@@ -44,10 +44,13 @@ public class ClientService : IClientService
         return filmes;
     }
      
-    public Result AvaliarFilme(CreateAvaliacaoDto createAvaliacaoDto)
+    public ReadAvaliacaoDto AvaliarFilme(CreateAvaliacaoDto createAvaliacaoDto)
     {
-        _clientRepos.AvaliarFilme(_mapper.Map<Avaliacao>(createAvaliacaoDto));
-        return Result.Ok();
+        var avaliacao = _mapper.Map<Avaliacao>(createAvaliacaoDto);
+        _clientRepos.AvaliarFilme(avaliacao);
+
+        var avaliacaoDto = _mapper.Map<ReadAvaliacaoDto>(avaliacao);
+        return avaliacaoDto;
     }
 
     public IEnumerable<ReadAvaliacaoDto> BuscarAvaliacoesDoFilme(Filme filme)
