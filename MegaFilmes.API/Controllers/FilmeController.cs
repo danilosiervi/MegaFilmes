@@ -20,7 +20,7 @@ public class FilmeController : ControllerBase
     public IActionResult AdicionarFilme([FromBody] CreateFilmeDto createFilmeDto)
     {
         var filme = _filmeService.AdicionarFilme(createFilmeDto);
-        return CreatedAtAction(nameof(BuscarFilmePorId), filme);
+        return CreatedAtAction(nameof(BuscarFilmePorId), new { id = filme }, filme);
     }
 
     [HttpGet]

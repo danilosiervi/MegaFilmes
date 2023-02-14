@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using FluentResults;
 using MegaFilmes.Data.Daos;
 using MegaFilmes.Models;
 using MegaFilmes.Services.Dtos.DiretorDtos;
@@ -36,29 +35,19 @@ public class DiretorService : IDiretorService
             .Select(d => _mapper.Map<ReadDiretorDto>(d));
     }
 
-    public Result DeletarDiretor(Diretor diretor)
+    public ReadDiretorDto DeletarDiretor(int id)
     {
-        try
-        {
-            _dao.Delete(diretor);
-            return Result.Ok();
-        }
-        catch
-        {
-            return Result.Fail("Ocorreu um erro ao tentar deletar o diretor");
-        }
+        var diretor = BuscarDiretorPorId(id);
+
+        _dao.Delete(_mapper.Map<Diretor>(diretor));
+        return diretor;
     }
 
-    public Result EditarDiretor(Diretor diretor)
+    public ReadDiretorDto EditarDiretor(int id)
     {
-        try
-        {
-            _dao.Delete(diretor);
-            return Result.Ok();
-        }
-        catch
-        {
-            return Result.Fail("Ocorreu um erro ao tentar editar o diretor");
-        }
+        var diretor = BuscarDiretorPorId(id);
+
+        _dao.Update(_mapper.Map<Diretor>(diretor));
+        return diretor;
     }
 }

@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using FluentResults;
 using MegaFilmes.Data.Daos;
 using MegaFilmes.Models;
 using MegaFilmes.Services.Dtos.GeneroDtos;

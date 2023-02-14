@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace MegaFilmes.API.Controllers;
 
+[Controller]
+[Route("[controller]")]
 public class GeneroController : ControllerBase
 {
     private readonly IGeneroService _generoService;
@@ -18,7 +20,7 @@ public class GeneroController : ControllerBase
     public IActionResult AdicionarGenero([FromBody] CreateGeneroDto createGeneroDto)
     {
         var genero = _generoService.AdicionarGenero(createGeneroDto);
-        return CreatedAtAction(nameof(BuscarGeneroPorId), genero);
+        return CreatedAtAction(nameof(BuscarGeneroPorId), new { id = genero }, genero);
     }
 
     [HttpGet]

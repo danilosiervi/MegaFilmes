@@ -12,7 +12,7 @@ public interface IDiretorService
 
     ReadDiretorDto? BuscarDiretorPorId(int id);
 
-    Result EditarDiretor(Diretor diretor);
+    ReadDiretorDto? EditarDiretor(int id);
 
-    Result DeletarDiretor(Diretor diretor);
+    ReadDiretorDto? DeletarDiretor(int id);
 }

@@ -2,5 +2,5 @@
 
 public class ReadGeneroDto
 {
-    public string Name { get; set; }
+    public string Nome { get; set; }
 }
