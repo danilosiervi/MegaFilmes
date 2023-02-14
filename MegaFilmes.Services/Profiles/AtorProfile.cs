@@ -9,6 +9,7 @@ public class AtorProfile : Profile
 	public AtorProfile()
 	{
 		CreateMap<Ator, ReadAtorDto>();
+		CreateMap<ReadAtorDto, Ator>();
 		CreateMap<CreateAtorDto, Ator>();
 	}
 }

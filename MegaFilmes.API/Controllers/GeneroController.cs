@@ -31,14 +31,14 @@ public class GeneroController : ControllerBase
     }
 
     [HttpGet("{id}")]
-    public IActionResult BuscarGeneroPorId([FromQuery] int id)
+    public IActionResult BuscarGeneroPorId(int id)
     {
         var genero = _generoService.BuscarGeneroPorId(id);
         return (genero == null) ? BadRequest() : Ok(genero);
     }
 
     [HttpDelete("{id}")]
-    public IActionResult DeletarGenero([FromQuery] int id)
+    public IActionResult DeletarGenero(int id)
     {
         var genero = _generoService.DeletarGenero(id);
         if (genero == null) return BadRequest();

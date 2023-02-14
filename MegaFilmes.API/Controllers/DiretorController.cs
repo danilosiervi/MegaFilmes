@@ -31,14 +31,14 @@ public class DiretorController : ControllerBase
     }
 
     [HttpGet("{id}")]
-    public IActionResult BuscarDiretorPorId([FromQuery] int id)
+    public IActionResult BuscarDiretorPorId(int id)
     {
         var diretor = _diretorService.BuscarDiretorPorId(id);
         return (diretor == null) ? BadRequest() : Ok(diretor);
     }
 
     [HttpDelete("{id}")]
-    public IActionResult DeletarDiretor([FromQuery] int id)
+    public IActionResult DeletarDiretor(int id)
     {
         var diretor = _diretorService.DeletarDiretor(id);
         if (diretor == null) return BadRequest();

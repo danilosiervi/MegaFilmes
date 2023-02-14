@@ -9,6 +9,7 @@ public class DiretorProfile : Profile
 	public DiretorProfile()
 	{
 		CreateMap<Diretor, ReadDiretorDto>();
+		CreateMap<ReadDiretorDto, Diretor>();
 		CreateMap<CreateDiretorDto, Diretor>();
 	}
 }

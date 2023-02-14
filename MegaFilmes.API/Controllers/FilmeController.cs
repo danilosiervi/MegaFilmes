@@ -31,14 +31,14 @@ public class FilmeController : ControllerBase
     }
 
     [HttpGet("{id}")]
-    public IActionResult BuscarFilmePorId([FromQuery] int id)
+    public IActionResult BuscarFilmePorId(int id)
     {
         var filme = _filmeService.BuscarFilmePorId(id);
         return (filme == null) ? BadRequest() : Ok(filme);
     }
 
     [HttpDelete("{id}")]
-    public IActionResult DeletarFilme([FromQuery] int id)
+    public IActionResult DeletarFilme(int id)
     {
         var filme = _filmeService.DeletarFilme(id);
         if (filme == null) return BadRequest();

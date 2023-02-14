@@ -27,7 +27,7 @@ public class Dao<TEntity> : IDao<TEntity> where TEntity : Entity
         var entity = _entities.Find(id);
         if (entity != null) _context.Entry(entity).State = EntityState.Detached;
 
-        return null;
+        return entity;
     }
 
     public void Update(TEntity entity)

@@ -9,6 +9,7 @@ public class GeneroProfile : Profile
 	public GeneroProfile()
 	{
 		CreateMap<Genero, ReadGeneroDto>();
+		CreateMap<ReadGeneroDto, Genero>();
 		CreateMap<CreateGeneroDto, Genero>();
 	}
 }
