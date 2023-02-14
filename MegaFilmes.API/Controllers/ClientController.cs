@@ -1,6 +1,5 @@
 ﻿using MegaFilmes.Models;
 using MegaFilmes.Services.Dtos.AvaliacaoDtos;
-using MegaFilmes.Services.Dtos.FilmeDtos;
 using MegaFilmes.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -33,7 +32,6 @@ namespace MegaFilmes.API.Controllers
                 return NotFound("Filme não localizado");
 
             return Ok(filme);
-
         }
 
         [HttpGet("{param}")]
@@ -47,11 +45,24 @@ namespace MegaFilmes.API.Controllers
         }
 
         [HttpPost]
+        [ProducesResponseType(StatusCodes.Status201Created)]
         public IActionResult AvaliarFilme([FromBody] CreateAvaliacaoDto createAvaliacaoDto)
         {
-            _service.AvaliarFilme(createAvaliacaoDto);
+            var filme = _service.AvaliarFilme(createAvaliacaoDto);
+            return CreatedAtAction(nameof(BuscarAvaliacaoPorId), filme);
         }
 
+        [HttpGet("{id}")]
+        public IActionResult BuscarAvaliacaoPorId(int id)
+        {
+            var avaliacao = _service.BuscarAvaliacaoPorId(id);
+            if (avaliacao == null)
+                return NotFound("Avaliação não localizada");
+
+            return Ok(avaliacao);
+        }
+
+        [HttpGet("{filme}")]
         public IActionResult BuscarAvaliacoesDoFilme(Filme filme)
         {
             var avaliacoes = _service.BuscarAvaliacoesDoFilme(filme);
@@ -61,14 +72,18 @@ namespace MegaFilmes.API.Controllers
             return Ok(avaliacoes);
         }
 
-        public void EditarAvaliacao(Avaliacao avaliacao)
+        [HttpPatch]
+        public IActionResult EditarAvaliacao(Avaliacao avaliacao)
         {
-            _service.EditarAvaliacao(avaliacao);
+            var result = _service.EditarAvaliacao(avaliacao);
+            return (result.IsSuccess) ? Ok() : BadRequest();
         }
 
-        public void DeletarAvaliacao(Avaliacao avaliacao)
+        [HttpDelete]
+        public IActionResult DeletarAvaliacao(Avaliacao avaliacao)
         {
-            _service.DeletarAvaliacao(avaliacao);
+            var result = _service.DeletarAvaliacao(avaliacao);
+            return (result.IsSuccess) ? Ok() : BadRequest();
         }
     }
 }

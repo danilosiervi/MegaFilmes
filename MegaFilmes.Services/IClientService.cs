@@ -13,7 +13,9 @@ public interface IClientService
 
     IEnumerable<ReadFilmeDto> BuscarFilmesPorParametro(string param);
 
-    Result AvaliarFilme(CreateAvaliacaoDto avaliacao);
+    ReadAvaliacaoDto AvaliarFilme(CreateAvaliacaoDto avaliacao);
+
+    ReadAvaliacaoDto? BuscarAvaliacaoPorId(int id);
 
     IEnumerable<ReadAvaliacaoDto> BuscarAvaliacoesDoFilme(Filme filme);
 

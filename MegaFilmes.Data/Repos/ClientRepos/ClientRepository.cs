@@ -30,6 +30,8 @@ public class ClientRepository : IClientRepository
 
     public void AvaliarFilme(Avaliacao avaliacao) => _avaliacaoDao.Add(avaliacao);
 
+    public Avaliacao? BuscarAvaliacaoPorId(int id) => _avaliacaoDao.GetById(id);
+
     public IEnumerable<Avaliacao> BuscarAvaliacoesDoFilme(Filme filme)
     {
         return _avaliacaoDao.GetAll()

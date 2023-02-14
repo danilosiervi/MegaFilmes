@@ -53,6 +53,14 @@ public class ClientService : IClientService
         return avaliacaoDto;
     }
 
+    public ReadAvaliacaoDto? BuscarAvaliacaoPorId(int id)
+    {
+        var avaliacao = _clientRepos.BuscarAvaliacaoPorId(id);
+
+        if (avaliacao == null) return null;
+        return _mapper.Map<ReadAvaliacaoDto>(avaliacao);
+    }
+
     public IEnumerable<ReadAvaliacaoDto> BuscarAvaliacoesDoFilme(Filme filme)
     {
         var avaliacoes = _clientRepos.BuscarAvaliacoesDoFilme(filme)

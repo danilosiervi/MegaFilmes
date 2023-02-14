@@ -12,6 +12,8 @@ public interface IClientRepository
 
     void AvaliarFilme(Avaliacao avaliacao);
 
+    Avaliacao? BuscarAvaliacaoPorId(int id);
+
     IEnumerable<Avaliacao> BuscarAvaliacoesDoFilme(Filme filme);
 
     void EditarAvaliacao(Avaliacao avaliacao);
