@@ -1,8 +1,10 @@
 using MegaFilmes.Data;
 using MegaFilmes.Data.Daos;
-using MegaFilmes.Data.Repos.AdminRepos;
-using MegaFilmes.Data.Repos.FilmeRepos;
-using MegaFilmes.Services;
+using MegaFilmes.Services.AtorServices;
+using MegaFilmes.Services.AvaliacaoServices;
+using MegaFilmes.Services.DiretorServices;
+using MegaFilmes.Services.FilmeServices;
+using MegaFilmes.Services.GeneroServices;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -17,10 +19,11 @@ builder.Services.AddDbContext<AppDbContext>(opts =>
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 builder.Services.AddScoped(typeof(IDao<>), typeof(Dao<>));
-builder.Services.AddScoped<IClientRepository, ClientRepository>();
-builder.Services.AddScoped<IAdminRepository, AdminRepository>();
-builder.Services.AddScoped<IClientService, ClientService>();
-builder.Services.AddScoped<IAdminService, AdminService>();
+builder.Services.AddScoped<IFilmeService, FilmeService>();
+builder.Services.AddScoped<IDiretorService, DiretorService>();
+builder.Services.AddScoped<IGeneroService, GeneroService>();
+builder.Services.AddScoped<IAtorSevice, AtorService>();
+builder.Services.AddScoped<IAvaliacaoService, AvaliacaoService>();
 
 builder.Services.AddControllers();
 

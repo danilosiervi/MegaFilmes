@@ -40,7 +40,7 @@ public class AppDbContext : DbContext
 		modelBuilder.Entity<Filme>()
 			.HasOne(f => f.Genero)
 			.WithMany(g => g.Filmes)
-			.HasForeignKey(f => f.Genero);
+			.HasForeignKey(f => f.GeneroId);
 
 		modelBuilder.Entity<Avaliacao>()
 			.HasOne(a => a.Filme)
