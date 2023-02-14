@@ -3,7 +3,7 @@ using MegaFilmes.Models;
 
 namespace MegaFilmes.Data.Repos.AdminRepos;
 
-public class AdminRepository
+public class AdminRepository : IAdminRepository
 {
     private readonly IDao<Filme> _filmeDao;
     private readonly IDao<Diretor> _diretorDao;

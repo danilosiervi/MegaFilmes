@@ -9,7 +9,7 @@ using MegaFilmes.Services.Dtos.GeneroDtos;
 
 namespace MegaFilmes.Services;
 
-public class AdminService
+public class AdminService : IAdminService
 {
     private readonly IAdminRepository _adminRepos;
     private readonly IMapper _mapper;

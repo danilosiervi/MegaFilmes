@@ -9,19 +9,19 @@ namespace MegaFilmes.Services;
 
 public interface IAdminService
 {
-    ReadFilmeDto AdicionarFilme(Filme filme);
+    ReadFilmeDto AdicionarFilme(CreateFilmeDto filme);
     Result EditarFilme(Filme filme);
     Result DeletarFilme(Filme filme);
 
-    ReadDiretorDto AdicionarDiretor(Diretor diretor);
+    ReadDiretorDto AdicionarDiretor(CreateDiretorDto diretor);
     Result EditarDiretor(Diretor diretor);
     Result DeletarDiretor(Diretor diretor);
 
-    ReadGeneroDto AdicionarGenero(Genero genero);
+    ReadGeneroDto AdicionarGenero(CreateGeneroDto genero);
     Result EditarGenero(Genero genero);
     Result DeletarGenero(Genero genero);
 
-    ReadAtorDto AdicionarAtor(Ator ator);
+    ReadAtorDto AdicionarAtor(CreateAtorDto ator);
     Result EditarAtor(Ator ator);
     Result DeletarAtor(Ator ator);
 }
