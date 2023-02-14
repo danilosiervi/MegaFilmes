@@ -17,28 +17,48 @@ public class GeneroService : IGeneroService
         _mapper = mapper;
     }
 
-    public ReadGeneroDto AdicionarGenero(CreateGeneroDto filme)
+    public ReadGeneroDto AdicionarGenero(CreateGeneroDto createGeneroDto)
     {
-        throw new NotImplementedException();
+        var genero = _mapper.Map<Genero>(createGeneroDto);
+        _dao.Add(genero);
+
+        return _mapper.Map<ReadGeneroDto>(genero);
     }
 
     public ReadGeneroDto? BuscarGeneroPorId(int id)
     {
-        throw new NotImplementedException();
+        return _mapper.Map<ReadGeneroDto>(_dao.GetById(id));
     }
 
     public IEnumerable<ReadGeneroDto> BuscarTodosGeneros()
     {
-        throw new NotImplementedException();
+        return _dao.GetAll()
+            .Select(g => _mapper.Map<ReadGeneroDto>(g));
     }
 
-    public Result DeletarGenero(Genero filme)
+    public Result DeletarGenero(Genero genero)
     {
-        throw new NotImplementedException();
+        try
+        {
+            _dao.Delete(genero);
+            return Result.Ok();
+        }
+        catch
+        {
+            return Result.Fail("Ocorreu um erro ao tentar deletar o gênero");
+        }
     }
 
-    public Result EditarGenero(Genero filme)
+    public Result EditarGenero(Genero genero)
     {
-        throw new NotImplementedException();
+        try
+        {
+            _dao.Update(genero);
+            return Result.Ok();
+        }
+        catch
+        {
+            return Result.Fail("Ocorreu um erro ao tentar editar o gênero");
+        }
     }
 }

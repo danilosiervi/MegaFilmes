@@ -6,13 +6,13 @@ namespace MegaFilmes.Services.GeneroServices;
 
 public interface IGeneroService
 {
-    ReadGeneroDto AdicionarGenero(CreateGeneroDto filme);
+    ReadGeneroDto AdicionarGenero(CreateGeneroDto createGeneroDto);
 
     IEnumerable<ReadGeneroDto> BuscarTodosGeneros();
 
     ReadGeneroDto? BuscarGeneroPorId(int id);
 
-    Result EditarGenero(Genero filme);
+    Result EditarGenero(Genero genero);
 
-    Result DeletarGenero(Genero filme);
+    Result DeletarGenero(Genero genero);
 }

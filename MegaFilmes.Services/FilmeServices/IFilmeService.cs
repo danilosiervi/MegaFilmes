@@ -6,7 +6,7 @@ namespace MegaFilmes.Services.FilmeServices;
 
 public interface IFilmeService
 {
-    ReadFilmeDto AdicionarFilme(CreateFilmeDto filme);
+    ReadFilmeDto AdicionarFilme(CreateFilmeDto createFilmeDto);
 
     IEnumerable<ReadFilmeDto> BuscarTodosFilmes();
 
