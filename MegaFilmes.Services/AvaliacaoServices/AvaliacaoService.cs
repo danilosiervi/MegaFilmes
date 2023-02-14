@@ -27,11 +27,19 @@ public class AvaliacaoService : IAvaliacaoService
     public IEnumerable<ReadAvaliacaoDto> BuscarTodasAvaliacoes()
     {
         return _dao.GetAll()
-            .Select(g => _mapper.Map<ReadAvaliacaoDto>(g));
+            .Select(a => _mapper.Map<ReadAvaliacaoDto>(a));
     }
 
-    public ReadAvaliacaoDto? BuscarAvaliacoesPorFilme(int id)
+    public ReadAvaliacaoDto? BuscarAvaliacaoPorId(int id)
     {
         return _mapper.Map<ReadAvaliacaoDto>(_dao.GetById(id));
+    }
+
+    public ReadAvaliacaoDto? DeletarAvaliacao(int id)
+    {
+        var avaliacao = BuscarAvaliacaoPorId(id);
+
+        _dao.Delete(_mapper.Map<Avaliacao>(avaliacao));
+        return avaliacao;
     }
 }

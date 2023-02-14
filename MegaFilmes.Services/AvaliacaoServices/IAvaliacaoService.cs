@@ -8,5 +8,7 @@ public interface IAvaliacaoService
 
     IEnumerable<ReadAvaliacaoDto> BuscarTodasAvaliacoes();
 
-    ReadAvaliacaoDto? BuscarAvaliacoesPorFilme(int id);
+    ReadAvaliacaoDto? BuscarAvaliacaoPorId(int id);
+
+    ReadAvaliacaoDto? DeletarAvaliacao(int id);
 }
