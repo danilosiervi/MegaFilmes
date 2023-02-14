@@ -1,4 +1,6 @@
-﻿namespace MegaFilmes.Models;
+﻿using System.Text.Json.Serialization;
+
+namespace MegaFilmes.Models;
 
 public class Genero : Entity 
 {
@@ -9,5 +11,6 @@ public class Genero : Entity
 
     public string Nome { get; set; }
 
+    [JsonIgnore]
     public virtual ICollection<Filme> Filmes { get; set; }
 }

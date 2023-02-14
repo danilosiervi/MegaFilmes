@@ -8,7 +8,6 @@ public class ReadFilmeDto
     public string Titulo { get; set; }
     public string Descricao { get; set; }
     public int Ano { get; set; }
-    public double MediaAvaliacoes { get; set; }
 
     public virtual Diretor Diretor { get; set; }
     public virtual Genero Genero { get; set; }
