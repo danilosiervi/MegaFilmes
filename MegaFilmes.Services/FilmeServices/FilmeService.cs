@@ -49,29 +49,19 @@ public class FilmeService : IFilmeService
             .Select(f => _mapper.Map<ReadFilmeDto>(f));
     }
 
-    public Result DeletarFilme(Filme filme)
+    public ReadFilmeDto? DeletarFilme(int id)
     {
-        try
-        {
-            _dao.Delete(filme);
-            return Result.Ok();
-        }
-        catch
-        {
-            return Result.Fail("Ocorreu um erro ao tentar deletar o filme");
-        }
+        var filme = BuscarFilmePorId(id);
+
+        _dao.Delete(_mapper.Map<Filme>(filme));
+        return filme;
     }
 
-    public Result EditarFilme(Filme filme)
+    public ReadFilmeDto? EditarFilme(int id)
     {
-        try
-        {
-            _dao.Update(filme);
-            return Result.Ok();
-        }
-        catch
-        {
-            return Result.Fail("Ocorreu um erro ao tentar editar o filme");
-        }
+        var filme = BuscarFilmePorId(id);
+
+        _dao.Update(_mapper.Map<Filme>(filme));
+        return filme;
     }
 }

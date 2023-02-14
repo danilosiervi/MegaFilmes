@@ -36,29 +36,19 @@ public class GeneroService : IGeneroService
             .Select(g => _mapper.Map<ReadGeneroDto>(g));
     }
 
-    public Result DeletarGenero(Genero genero)
+    public ReadGeneroDto? DeletarGenero(int id)
     {
-        try
-        {
-            _dao.Delete(genero);
-            return Result.Ok();
-        }
-        catch
-        {
-            return Result.Fail("Ocorreu um erro ao tentar deletar o gênero");
-        }
+        var genero = BuscarGeneroPorId(id);
+
+        _dao.Update(_mapper.Map<Genero>(genero));
+        return genero;
     }
 
-    public Result EditarGenero(Genero genero)
+    public ReadGeneroDto? EditarGenero(int id)
     {
-        try
-        {
-            _dao.Update(genero);
-            return Result.Ok();
-        }
-        catch
-        {
-            return Result.Fail("Ocorreu um erro ao tentar editar o gênero");
-        }
+        var genero = BuscarGeneroPorId(id);
+
+        _dao.Update(_mapper.Map<Genero>(genero));
+        return genero;
     }
 }

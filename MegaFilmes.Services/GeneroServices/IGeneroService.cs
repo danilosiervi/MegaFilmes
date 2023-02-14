@@ -12,7 +12,7 @@ public interface IGeneroService
 
     ReadGeneroDto? BuscarGeneroPorId(int id);
 
-    Result EditarGenero(Genero genero);
+    ReadGeneroDto? EditarGenero(int id);
 
-    Result DeletarGenero(Genero genero);
+    ReadGeneroDto? DeletarGenero(int id);
 }

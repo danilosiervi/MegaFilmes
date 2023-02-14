@@ -14,7 +14,7 @@ public interface IFilmeService
 
     IEnumerable<ReadFilmeDto> BuscarFilmesPorParametro(string param);
 
-    Result EditarFilme(Filme filme);
+    ReadFilmeDto? EditarFilme(int id);
 
-    Result DeletarFilme(Filme filme);
+    ReadFilmeDto? DeletarFilme(int id);
 }
