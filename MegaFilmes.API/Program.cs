@@ -22,7 +22,7 @@ builder.Services.AddScoped(typeof(IDao<>), typeof(Dao<>));
 builder.Services.AddScoped<IFilmeService, FilmeService>();
 builder.Services.AddScoped<IDiretorService, DiretorService>();
 builder.Services.AddScoped<IGeneroService, GeneroService>();
-builder.Services.AddScoped<IAtorSevice, AtorService>();
+builder.Services.AddScoped<IAtorService, AtorService>();
 builder.Services.AddScoped<IAvaliacaoService, AvaliacaoService>();
 
 builder.Services.AddControllers();

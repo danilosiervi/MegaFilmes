@@ -1,6 +1,4 @@
-﻿using MegaFilmes.Services.AtorServices;
-using MegaFilmes.Services.AvaliacaoServices;
-using MegaFilmes.Services.Dtos.AtorDtos;
+﻿using MegaFilmes.Services.AvaliacaoServices;
 using MegaFilmes.Services.Dtos.AvaliacaoDtos;
 using Microsoft.AspNetCore.Mvc;
 
