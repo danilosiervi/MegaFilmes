@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace MegaFilmes.API.Controllers;
 
+[Controller]
+[Route("[controller]")]
 public class FilmeController : ControllerBase
 {
     private readonly IFilmeService _filmeService;
