@@ -43,7 +43,7 @@ public class ClientService : IClientService
         if (filmes == null) return null;
         return filmes;
     }
-     
+    
     public ReadAvaliacaoDto AvaliarFilme(CreateAvaliacaoDto createAvaliacaoDto)
     {
         var avaliacao = _mapper.Map<Avaliacao>(createAvaliacaoDto);
