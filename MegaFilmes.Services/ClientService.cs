@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using FluentResults;
 using MegaFilmes.Data.Repos.FilmeRepos;
 using MegaFilmes.Models;
 using MegaFilmes.Services.Dtos.AvaliacaoDtos;
@@ -43,9 +44,10 @@ public class ClientService : IClientService
         return filmes;
     }
      
-    public void AvaliarFilme(CreateAvaliacaoDto createAvaliacaoDto)
+    public Result AvaliarFilme(CreateAvaliacaoDto createAvaliacaoDto)
     {
         _clientRepos.AvaliarFilme(_mapper.Map<Avaliacao>(createAvaliacaoDto));
+        return Result.Ok();
     }
 
     public IEnumerable<ReadAvaliacaoDto> BuscarAvaliacoesDoFilme(Filme filme)
@@ -57,13 +59,15 @@ public class ClientService : IClientService
         return avaliacoes;
     }
 
-    public void EditarAvaliacao(Avaliacao avaliacao)
+    public Result EditarAvaliacao(Avaliacao avaliacao)
     {
         _clientRepos.EditarAvaliacao(avaliacao);
+        return Result.Ok();
     }
 
-    public void DeletarAvaliacao(Avaliacao avaliacao)
+    public Result DeletarAvaliacao(Avaliacao avaliacao)
     {
         _clientRepos.DeletarAvaliacao(avaliacao);
+        return Result.Ok();
     }
 }

@@ -1,4 +1,5 @@
-﻿using MegaFilmes.Models;
+﻿using FluentResults;
+using MegaFilmes.Models;
 using MegaFilmes.Services.Dtos.AvaliacaoDtos;
 using MegaFilmes.Services.Dtos.FilmeDtos;
 
@@ -12,11 +13,11 @@ public interface IClientService
 
     IEnumerable<ReadFilmeDto> BuscarFilmesPorParametro(string param);
 
-    void AvaliarFilme(CreateAvaliacaoDto avaliacao);
+    Result AvaliarFilme(CreateAvaliacaoDto avaliacao);
 
     IEnumerable<ReadAvaliacaoDto> BuscarAvaliacoesDoFilme(Filme filme);
 
-    void EditarAvaliacao(Avaliacao avaliacao);
+    Result EditarAvaliacao(Avaliacao avaliacao);
 
-    void DeletarAvaliacao(Avaliacao avaliacao);
+    Result DeletarAvaliacao(Avaliacao avaliacao);
 }
