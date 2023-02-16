@@ -13,7 +13,7 @@ public class ReadFilmeDto
     {
         get
         {
-            return (Avaliacoes.Any()) ? Math.Round(Avaliacoes.Average(a => a.Nota), 2) : 0;
+            return (Avaliacoes.Any()) ? Math.Round(Avaliacoes.Average(a => a.Nota), 1) : 0;
         }
         set
         {
