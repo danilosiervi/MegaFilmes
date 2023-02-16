@@ -1,7 +1,5 @@
 <h1 align="center"> MegaFilmes</h1>
 
-## Resumo do projeto
-
 
 ### 🔨 Funcionalidades do projeto
 
@@ -21,7 +19,6 @@
 - ``ASP.NET``
 - ``Postman``
 - ``Visual Studio``
-- ``Paradigma de orientação a objetos``
 
 
 ### - Desenvolvedores
