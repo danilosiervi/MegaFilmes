@@ -5,6 +5,13 @@
 
 ### 🔨 Funcionalidades do projeto
 
+- Deve ser possível adicionar um filme
+- Deve ser possível avaliar o filme numa escala de 1 a 5
+- Deve ser possível calcular a média das avaliações
+- Deve ser possível modificar alguns dados do filme
+- Adicionar elenco ao filme
+- Trazer uma lista paginada
+- Filtrar filmes por alguns atributos
 
 
 ### ✔️ Técnicas e tecnologias utilizadas
