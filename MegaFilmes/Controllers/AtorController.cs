@@ -56,7 +56,7 @@ public class AtorController : ControllerBase
     }
 
     [HttpDelete("{id}")]
-    public IActionResult RemoverAvtor(int id)
+    public IActionResult RemoverAtor(int id)
     {
         var ator = _context.Atores.FirstOrDefault(a => a.AtorId == id);
         if (ator == null) return NotFound($"Não é possivel encontrar ator com id {id}");
