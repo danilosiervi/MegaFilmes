@@ -11,7 +11,6 @@ public class Ator
     }
 
     [Key]
-    [JsonIgnore]
     public int AtorId { get; set; }
     public string Nome { get; set; }
 

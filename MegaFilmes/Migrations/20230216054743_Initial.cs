@@ -104,7 +104,8 @@ namespace MegaFilmes.Migrations
                 columns: table => new
                 {
                     AtorId = table.Column<int>(type: "int", nullable: false),
-                    FilmeId = table.Column<int>(type: "int", nullable: false)
+                    FilmeId = table.Column<int>(type: "int", nullable: false),
+                    Personagem = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {

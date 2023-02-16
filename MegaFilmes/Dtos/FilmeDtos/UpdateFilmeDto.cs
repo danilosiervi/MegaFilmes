@@ -11,7 +11,6 @@ public class UpdateFilmeDto
     public string Descricao { get; set; }
 
     [Required]
-    // 1895 foi o ano da criacao do cinema. Se deixássemos em aberto, poderia colocar qualquer inteiro
     [Range(1895, 2023, ErrorMessage = "O ano é obrigatório e deve estar entre 1895 e o ano atual.")]
     public int Ano { get; set; }
 

@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MegaFilmes.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230216025321_Initial")]
+    [Migration("20230216054743_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -126,6 +126,10 @@ namespace MegaFilmes.Migrations
 
                     b.Property<int>("AtorId")
                         .HasColumnType("int");
+
+                    b.Property<string>("Personagem")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("FilmeId", "AtorId");
 

@@ -4,6 +4,6 @@ namespace MegaFilmes.Dtos.DiretorDtos;
 
 public class CreateDiretorDto
 {
-    [Required]
+    [Required(ErrorMessage = "O nome é obrigatório")]
     public string Nome { get; set; }
 }

@@ -20,7 +20,7 @@ public class AvaliacaoController : ControllerBase
 
     [HttpPost("filme/{id}")]
     [ProducesResponseType(StatusCodes.Status201Created)]
-    public IActionResult AvaliarFilmePorId(int id, [FromBody] CreateAvaliacaoDto createAvaliacaoDto)
+    public IActionResult AvaliarFilme(int id, [FromBody] CreateAvaliacaoDto createAvaliacaoDto)
     {
         if (createAvaliacaoDto == null) return BadRequest("Insira os dados da avaliação");
 

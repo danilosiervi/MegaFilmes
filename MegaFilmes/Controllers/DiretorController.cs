@@ -22,7 +22,7 @@ public class DiretorController : ControllerBase
     [HttpPost]
     public IActionResult AdicionarDiretor([FromBody] CreateDiretorDto createDiretorDto)
     {
-        if (createDiretorDto == null) return BadRequest();
+        if (createDiretorDto == null) return BadRequest("Insira os dados do diretor a ser criado");
 
         Diretor diretor = _mapper.Map<Diretor>(createDiretorDto);
 
