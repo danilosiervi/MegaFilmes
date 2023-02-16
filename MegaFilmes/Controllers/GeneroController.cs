@@ -42,7 +42,7 @@ public class GeneroController : ControllerBase
     public IActionResult RemoverGenero(int id)
     {
         var genero = _context.Generos.FirstOrDefault(a => a.GeneroId == id);
-        if (genero == null) return NotFound($"Não é possivel encontrar genero com id {id}");
+        if (genero == null) return NotFound($"Não é possivel encontrar gênero com id {id}");
 
         _context.Generos.Remove(genero);
         _context.SaveChanges();
