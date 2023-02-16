@@ -37,4 +37,16 @@ public class DiretorController : ControllerBase
     {
         return _mapper.Map<List<ReadDiretorDto>>(_context.Diretores);
     }
+
+    [HttpDelete("{id}")]
+    public IActionResult RemoverDiretor(int id)
+    {
+        var diretor = _context.Diretores.FirstOrDefault(a => a.DiretorId == id);
+        if (diretor == null) return NotFound($"Não é possivel encontrar diretor com id {id}");
+
+        _context.Diretores.Remove(diretor);
+        _context.SaveChanges();
+
+        return NoContent();
+    }
 }

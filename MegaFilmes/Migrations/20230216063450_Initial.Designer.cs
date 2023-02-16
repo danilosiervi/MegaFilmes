@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MegaFilmes.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230216054743_Initial")]
+    [Migration("20230216063450_Initial")]
     partial class Initial
     {
         /// <inheritdoc />

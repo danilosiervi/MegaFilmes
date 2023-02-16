@@ -41,7 +41,7 @@ public class AtorController : ControllerBase
         return _mapper.Map<List<ReadAtorDto>>(_context.Atores);
     }
 
-    [HttpPost("filme/{id}")]
+    [HttpPost("Filme/{id}")]
     public IActionResult AdicionarAtorAoFilme(int id, [FromBody] CreateFilmeAtorDto createFilmeAtorDto)
     {
         if (createFilmeAtorDto == null) return BadRequest("Insira os dados do elenco");
@@ -53,5 +53,17 @@ public class AtorController : ControllerBase
         _context.SaveChanges();
 
         return Ok(elenco);
+    }
+
+    [HttpDelete("{id}")]
+    public IActionResult RemoverAvtor(int id)
+    {
+        var ator = _context.Atores.FirstOrDefault(a => a.AtorId == id);
+        if (ator == null) return NotFound($"Não é possivel encontrar ator com id {id}");
+
+        _context.Atores.Remove(ator);
+        _context.SaveChanges();
+
+        return NoContent();
     }
 }

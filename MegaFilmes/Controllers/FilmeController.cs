@@ -33,12 +33,12 @@ public class FilmeController : ControllerBase
     }
 
     [HttpGet]
-    public ReadFilmesPaginadosDto BuscarTodosFilmes([FromQuery] int skip = 0, [FromQuery] int take = 10)
+    public ReadFilmesPaginadosDto BuscarTodosFilmes([FromQuery] int page = 0, [FromQuery] int take = 10)
     {
-        double quantidade = _context.Filmes.Count();
-        int paginas = (int)Math.Ceiling(quantidade / take);
+        int quantidade = _context.Filmes.Count();
+        int paginas = quantidade / take;
 
-        var listaDeFilmes = _context.Filmes.Skip(skip).Take(take)
+        var listaDeFilmes = _context.Filmes.Skip(page).Take(take)
             .ToList();
 
         var listaDeFilmesDto = listaDeFilmes.ConvertAll(f => _mapper.Map<ReadFilmeDto>(f));
@@ -46,8 +46,9 @@ public class FilmeController : ControllerBase
         return new ReadFilmesPaginadosDto
         {
             Filmes = listaDeFilmesDto,
-            Pagina = skip,
-            Total = paginas
+            Pagina = page + 1,
+            TotalDePaginas = paginas + 1,
+            TotalDeFilmes = quantidade
         };
     }
 
@@ -61,7 +62,7 @@ public class FilmeController : ControllerBase
         return Ok(filmeDto);
     }
 
-    [HttpGet("getParameter/{param}")]
+    [HttpGet("Parameter/{param}")]
     public IActionResult BuscarFilmePorParametro(string param)
     {
         var filmes = _context.Filmes
