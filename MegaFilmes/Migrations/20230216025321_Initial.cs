@@ -82,7 +82,7 @@ namespace MegaFilmes.Migrations
                 name: "Avaliacoes",
                 columns: table => new
                 {
-                    AvalicaoId = table.Column<int>(type: "int", nullable: false)
+                    AvaliacaoId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Nota = table.Column<int>(type: "int", nullable: false),
                     Comentario = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -90,7 +90,7 @@ namespace MegaFilmes.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Avaliacoes", x => x.AvalicaoId);
+                    table.PrimaryKey("PK_Avaliacoes", x => x.AvaliacaoId);
                     table.ForeignKey(
                         name: "FK_Avaliacoes_Filmes_FilmeId",
                         column: x => x.FilmeId,

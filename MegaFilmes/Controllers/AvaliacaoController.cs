@@ -27,6 +27,9 @@ public class AvaliacaoController : ControllerBase
         Avaliacao avaliacao = _mapper.Map<Avaliacao>(createAvaliacaoDto);
         avaliacao.FilmeId = id;
 
+        _context.Avaliacoes.Add(avaliacao);
+        _context.SaveChanges();
+
         return Ok(avaliacao);
     }
 

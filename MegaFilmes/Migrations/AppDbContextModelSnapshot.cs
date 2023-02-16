@@ -43,11 +43,11 @@ namespace MegaFilmes.Migrations
 
             modelBuilder.Entity("MegaFilmes.Models.Avaliacao", b =>
                 {
-                    b.Property<int>("AvalicaoId")
+                    b.Property<int>("AvaliacaoId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AvalicaoId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AvaliacaoId"));
 
                     b.Property<string>("Comentario")
                         .HasColumnType("nvarchar(max)");
@@ -58,7 +58,7 @@ namespace MegaFilmes.Migrations
                     b.Property<int>("Nota")
                         .HasColumnType("int");
 
-                    b.HasKey("AvalicaoId");
+                    b.HasKey("AvaliacaoId");
 
                     b.HasIndex("FilmeId");
 

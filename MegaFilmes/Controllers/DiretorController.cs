@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using MegaFilmes.Dtos.DiretorDtos;
+using MegaFilmes.Dtos.GeneroDtos;
 using MegaFilmes.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -32,8 +33,8 @@ public class DiretorController : ControllerBase
     }
 
     [HttpGet]
-    public IEnumerable<ReadDiretorDto> BuscarTodosOsDiretores()
+    public IEnumerable<ReadDiretorDto> BuscarTodosDiretores()
     {
-        return _context.Diretores.Select(d => _mapper.Map<ReadDiretorDto>(d)).ToList();
+        return _mapper.Map<List<ReadDiretorDto>>(_context.Diretores);
     }
 }

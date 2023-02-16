@@ -6,7 +6,7 @@ namespace MegaFilmes.Models;
 public class Avaliacao
 {
     [Key]
-    public int AvalicaoId { get; set; }
+    public int AvaliacaoId { get; set; }
     public int Nota { get; set; }
     public string? Comentario { get; set; }
 

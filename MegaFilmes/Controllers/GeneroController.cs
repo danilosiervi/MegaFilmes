@@ -31,9 +31,9 @@ public class GeneroController : ControllerBase
     }
 
     [HttpGet]
-    public IEnumerable<ReadGeneroDto> BuscarTodosGeneros([FromQuery] int skip = 0, [FromQuery] int take = 10)
+    public IEnumerable<ReadGeneroDto> BuscarTodosGeneros()
     {
-        return _mapper.Map<List<ReadGeneroDto>>(_context.Generos.Skip(skip).Take(take));
+        return _mapper.Map<List<ReadGeneroDto>>(_context.Generos);
     }
 
     [HttpGet("{id}")]

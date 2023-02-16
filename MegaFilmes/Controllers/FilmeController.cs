@@ -72,8 +72,8 @@ public class FilmeController : ControllerBase
             .ToList();
         if (filmes == null) return NotFound($"Não foi encontrado nenhum filme com {param}");
 
-        var filmesDto = filmes.Select(f => _mapper.Map<ReadFilmeDto>(f));
-        return Ok(filmes);
+        var filmesDto = filmes.ConvertAll(f => _mapper.Map<ReadFilmeDto>(f));
+        return Ok(filmesDto);
     }
 
     [HttpPut("{id}")]
