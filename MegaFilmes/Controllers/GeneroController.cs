@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
-using MegaFilmes.Data;
+using MegaFilmes.Dtos.GeneroDtos;
 using MegaFilmes.Models;
-using MegaFilmes.Services.Dtos.GeneroDtos;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MegaFilmes.Controllers;

@@ -1,4 +1,4 @@
-using MegaFilmes.Data;
+using MegaFilmes;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);

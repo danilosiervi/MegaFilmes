@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace MegaFilmes.Services.Dtos.GeneroDtos;
+namespace MegaFilmes.Dtos.GeneroDtos;
 
 public class CreateGeneroDto
 {

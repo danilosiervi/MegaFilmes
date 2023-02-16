@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace MegaFilmes.Services.Dtos.AvaliacaoDtos;
+namespace MegaFilmes.Dtos.AvaliacaoDtos;
 
 public class CreateAvaliacaoDto
 {
@@ -10,7 +10,4 @@ public class CreateAvaliacaoDto
 
     [StringLength(200, ErrorMessage = "O comentário deve possuir no máximo 200 caracteres.")]
     public string Comentario { get; set; }
-
-    [Required]
-    public int FilmeId { get; set; }
 }

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace MegaFilmes.Services.Dtos.FilmeDtos;
+namespace MegaFilmes.Dtos.FilmeDtos;
 
 public class CreateFilmeDto
 {

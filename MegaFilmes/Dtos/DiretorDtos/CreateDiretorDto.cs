@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace MegaFilmes.Services.Dtos.DiretorDtos;
+namespace MegaFilmes.Dtos.DiretorDtos;
 
 public class CreateDiretorDto
 {

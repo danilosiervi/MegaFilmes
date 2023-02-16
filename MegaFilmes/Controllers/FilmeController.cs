@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
-using MegaFilmes.Data;
+using MegaFilmes.Dtos.FilmeDtos;
 using MegaFilmes.Models;
-using MegaFilmes.Services.Dtos.FilmeDtos;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MegaFilmes.Controllers;
@@ -34,8 +33,22 @@ public class FilmeController : ControllerBase
     }
 
     [HttpGet]
-    public IEnumerable<ReadFilmeDto> BuscarTodosFilmes([FromQuery] int skip = 0, [FromQuery] int take = 10)
+    public ReadFilmesPaginadosDto BuscarTodosFilmes([FromQuery] int skip = 0, [FromQuery] int take = 10)
     {
+        double quantidade = _context.Filmes.Count();
+        int paginas = (int)Math.Ceiling(quantidade / take);
+
+        var listaDeFilmes = _context.Filmes.Skip(skip).Take(take)
+            .ToList();
+
+        var listaDeFilmesDto = listaDeFilmes.ConvertAll(f => _mapper.Map<ReadFilmeDto>(f));
+
+        return new ReadFilmesPaginadosDto
+        {
+            Filmes = listaDeFilmesDto,
+            Pagina = skip,
+            Total = paginas
+        };
     }
 
     [HttpGet("{id}")]
@@ -48,7 +61,7 @@ public class FilmeController : ControllerBase
         return Ok(filmeDto);
     }
 
-    [HttpGet("{param}")]
+    [HttpGet("getParameter/{param}")]
     public IActionResult BuscarFilmePorParametro(string param)
     {
         var filmes = _context.Filmes
@@ -56,10 +69,10 @@ public class FilmeController : ControllerBase
                 f.Titulo.ToLower().Contains(param.ToLower()) ||
                 f.Genero.Nome.ToLower().Contains(param.ToLower()) ||
                 f.Diretor.Nome.ToLower().Contains(param.ToLower()))
-            .Select(f => _mapper.Map<ReadFilmeDto>(f))
             .ToList();
-
         if (filmes == null) return NotFound($"Não foi encontrado nenhum filme com {param}");
+
+        var filmesDto = filmes.Select(f => _mapper.Map<ReadFilmeDto>(f));
         return Ok(filmes);
     }
 

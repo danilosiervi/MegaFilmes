@@ -1,7 +1,7 @@
-﻿namespace MegaFilmes.Services.Dtos.DiretorDtos;
+﻿namespace MegaFilmes.Dtos.DiretorDtos;
 
 public class ReadDiretorDto
 {
-    public int Id { get; set; }
+    public int DiretorId { get; set; }
     public string Nome { get; set; }
 }

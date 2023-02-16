@@ -1,10 +1,10 @@
 ﻿using MegaFilmes.Models;
 
-namespace MegaFilmes.Services.Dtos.FilmeDtos;
+namespace MegaFilmes.Dtos.FilmeDtos;
 
 public class ReadFilmeDto
 {
-    public int Id { get; set; }
+    public int FilmeId { get; set; }
     public string Titulo { get; set; }
     public string Descricao { get; set; }
     public int Ano { get; set; }

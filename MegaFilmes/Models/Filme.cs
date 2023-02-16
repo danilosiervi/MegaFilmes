@@ -23,6 +23,4 @@ public class Filme
     public virtual Genero Genero { get; set; }
     public virtual ICollection<FilmeAtor> Elenco { get; set; }
     public virtual ICollection<Avaliacao> Avaliacoes { get; set; }
-
-    public double MediaAvaliacoes => Avaliacoes.Sum(item => item.Nota) / Avaliacoes.Count;
 }

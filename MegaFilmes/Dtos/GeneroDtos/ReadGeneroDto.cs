@@ -1,7 +1,7 @@
-﻿namespace MegaFilmes.Services.Dtos.GeneroDtos;
+﻿namespace MegaFilmes.Dtos.GeneroDtos;
 
 public class ReadGeneroDto
 {
-    public int Id { get; set; }
+    public int GeneroId { get; set; }
     public string Nome { get; set; }
 }

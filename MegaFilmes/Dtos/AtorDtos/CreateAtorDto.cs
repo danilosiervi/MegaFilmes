@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace MegaFilmes.Services.Dtos.AtorDtos;
+namespace MegaFilmes.Dtos.AtorDtos;
 
 public class CreateAtorDto
 {

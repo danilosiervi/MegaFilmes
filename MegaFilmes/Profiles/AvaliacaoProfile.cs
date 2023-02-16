@@ -1,15 +1,15 @@
 ﻿using AutoMapper;
+using MegaFilmes.Dtos.AvaliacaoDtos;
 using MegaFilmes.Models;
-using MegaFilmes.Services.Dtos.AvaliacaoDtos;
 
-namespace MegaFilmes.Services.Profiles;
+namespace MegaFilmes.Profiles;
 
 public class AvaliacaoProfile : Profile
 {
-	public AvaliacaoProfile()
-	{
-		CreateMap<Avaliacao, ReadAvaliacaoDto>();
+    public AvaliacaoProfile()
+    {
+        CreateMap<Avaliacao, ReadAvaliacaoDto>();
         CreateMap<ReadAvaliacaoDto, Avaliacao>();
         CreateMap<CreateAvaliacaoDto, Avaliacao>();
-	}
+    }
 }
