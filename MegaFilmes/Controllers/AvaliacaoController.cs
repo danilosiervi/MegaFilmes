@@ -41,7 +41,7 @@ public class AvaliacaoController : ControllerBase
             .Select(a => _mapper.Map<ReadAvaliacaoDto>(a))
             .ToList();
 
-        if (avaliacoes == null) return NotFound($"Não foi encontrado nenhuma avaliação para o filme de id {id}");
+        if (avaliacoes == null) return NotFound($"Não foi encontrada nenhuma avaliação para o filme de id {id}");
 
         return Ok(avaliacoes);
     }
