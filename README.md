@@ -1,10 +1,5 @@
 <h1 align="center"> MegaFilmes</h1>
 
-
-<h2 align="center"> 
-    :construction:  Projeto em construção  :construction:
-</h2>
-
 ## Resumo do projeto
 
 
